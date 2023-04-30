@@ -5,6 +5,7 @@ export interface ITrack {
   name: string;
   artist: string;
   album: string;
+  uri: string;
 }
 
 interface TrackProps {

@@ -10,18 +10,21 @@ const initialResults: ITrack[] = [
     name: "Nightlights w/ 1Bjarke",
     artist: "Rune Bagge",
     album: "Grab a Star",
+    uri: crypto.randomUUID(),
   },
   {
     id: crypto.randomUUID(),
     name: "Past, Six Of Swords, Upright",
     artist: "Internazionale",
     album: "Out Of The Blue, Into The Light",
+    uri: crypto.randomUUID(),
   },
   {
     id: crypto.randomUUID(),
     name: "Do You Believe In Energy?",
     artist: "Anthony Linell",
     album: "Outlines (Repurposed) 2013-2019",
+    uri: crypto.randomUUID(),
   },
 ];
 
@@ -31,18 +34,21 @@ const initialPlaylist: ITrack[] = [
     name: "Power Corrupts",
     artist: "Croatian Amor & Scandinavian Star",
     album: "Two Autumns",
+    uri: crypto.randomUUID(),
   },
   {
     id: crypto.randomUUID(),
     name: "For The Butterfly",
     artist: "E-Saggila",
     album: "Corporate Cross",
+    uri: crypto.randomUUID(),
   },
   {
     id: crypto.randomUUID(),
     name: "Machine Guns & Peacock Feathers",
     artist: "Ulver",
     album: "Flowers Of Evil",
+    uri: crypto.randomUUID(),
   },
 ];
 
