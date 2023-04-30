@@ -83,7 +83,6 @@ function App() {
         handleAddTrack={handleAddTrack}
       />
       <Playlist
-        playlistName="My playlist"
         playlistTracks={playlistTracks}
         handleRemoveTrack={handleRemoveTrack}
       />
