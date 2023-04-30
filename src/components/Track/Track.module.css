@@ -1,0 +1,20 @@
+.card {
+  margin: 1rem 0;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border: 1px solid #dfdfdf;
+}
+
+.content {
+  display: grid;
+  row-gap: 0.25rem;
+  column-gap: 1rem;
+  grid-template-columns: auto auto;
+}
+
+.content :nth-child(odd) {
+  font-size: 0.75rem;
+  font-weight: 600;
+}
