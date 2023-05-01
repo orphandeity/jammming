@@ -1,36 +1,33 @@
 import styles from "./Playlist.module.css";
-import { useMemo, useState } from "react";
-import { ITrack } from "../Track/Track";
 import Tracklist from "../Tracklist/Tracklist";
 
 interface IPlaylistProps {
-  playlistTracks: ITrack[];
-  handleRemoveTrack: (trackId: string) => void;
+  playlistTracks: TrackType[];
+  onNameChange: (name: string) => void;
+  onRemoveTrack: (trackId: string) => void;
+  onSave: () => void;
 }
 
-function Playlist({ playlistTracks, handleRemoveTrack }: IPlaylistProps) {
-  // user can customize playlist name
-  const [playlistName, setPlaylistName] = useState("My playlist");
-
-  // array containing spotify uri for each track in playlist
-  const trackUris = useMemo(
-    () => playlistTracks.map((track) => track.uri),
-    [playlistTracks]
-  );
+function Playlist({
+  playlistTracks,
+  onNameChange,
+  onRemoveTrack,
+  onSave,
+}: IPlaylistProps) {
+  function handleNameChange(event: React.ChangeEvent<HTMLInputElement>) {
+    onNameChange(event.target.value);
+  }
 
   return (
     <>
       <input
-        className={styles.title}
         type="text"
-        value={playlistName}
-        onChange={(e) => setPlaylistName(e.target.value)}
+        defaultValue={"New Playlist"}
+        onChange={handleNameChange}
+        className={styles.title}
       />
-      <Tracklist
-        tracks={playlistTracks}
-        handleRemoveTrack={handleRemoveTrack}
-      />
-      {trackUris.join()}
+      <Tracklist tracks={playlistTracks} onRemoveTrack={onRemoveTrack} />
+      <button onClick={onSave}>save to spotify</button>
     </>
   );
 }

@@ -1,15 +1,7 @@
 import styles from "./Track.module.css";
 
-export interface ITrack {
-  id: string;
-  name: string;
-  artist: string;
-  album: string;
-  uri: string;
-}
-
 interface TrackProps {
-  track: ITrack;
+  track: TrackType;
 }
 
 function Track({ track }: TrackProps) {

@@ -1,17 +1,28 @@
+import { useState } from "react";
+
 interface SearchBarProps {
-  searchQuery: string;
-  setSearchQuery: React.Dispatch<string>;
+  onSearch: (term: string) => void;
 }
 
-function SearchBar({ searchQuery, setSearchQuery }: SearchBarProps) {
+function SearchBar({ onSearch }: SearchBarProps) {
+  const [term, setTerm] = useState("");
+
+  function handleTermChange(event: React.ChangeEvent<HTMLInputElement>) {
+    setTerm(event.target.value);
+  }
+
+  function search() {
+    onSearch(term);
+  }
+
   return (
     <>
       <input
         type="text"
-        value={searchQuery}
-        onChange={(e) => setSearchQuery(e.target.value)}
+        placeholder="Enter a song title"
+        onChange={handleTermChange}
       />
-      <button>search</button>
+      <button onClick={search}>search</button>
     </>
   );
 }
