@@ -1,5 +1,4 @@
-import styles from "./SearchResults.module.css";
-import Tracklist from "../Tracklist/Tracklist";
+import Tracklist from "./Tracklist";
 
 interface searchResultsProps {
   searchResults: TrackType[];
@@ -8,8 +7,8 @@ interface searchResultsProps {
 
 function SearchResults({ searchResults, onAddTrack }: searchResultsProps) {
   return (
-    <div className={styles.searchResults}>
-      <h2>Search Results</h2>
+    <div className="mx-auto space-y-4">
+      <h2 className="text-2xl font-semibold">Search Results</h2>
       <Tracklist tracks={searchResults} onAddTrack={onAddTrack} />
     </div>
   );

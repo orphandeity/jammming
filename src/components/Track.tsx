@@ -1,13 +1,11 @@
-import styles from "./Track.module.css";
-
 interface TrackProps {
   track: TrackType;
 }
 
 function Track({ track }: TrackProps) {
   return (
-    <div className={styles.card}>
-      <dl className={styles.content}>
+    <div>
+      <dl>
         <dt>Track</dt>
         <dd>{track.name}</dd>
         <dt>Artist</dt>

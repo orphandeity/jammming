@@ -1,10 +1,22 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-neutral-50 text-neutral-950;
 }
 
-:root {
-  font-family: sans-serif;
-  font-size: 16px;
+dl {
+  display: grid;
+  grid-template-columns: max-content auto;
+  align-items: center;
+  column-gap: 1rem;
+}
+
+dt {
+  @apply truncate text-xs opacity-75;
+}
+
+dd {
+  @apply truncate text-sm font-medium;
 }

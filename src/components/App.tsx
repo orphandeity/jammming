@@ -1,8 +1,8 @@
 import { useState } from "react";
-import SearchBar from "../SearchBar/SearchBar";
-import SearchResults from "../SearchResults/SearchResults";
-import Playlist from "../Playlist/Playlist";
-import Spotify from "../../util/spotify";
+import SearchBar from "./SearchBar";
+import SearchResults from "./SearchResults";
+import Playlist from "./Playlist";
+import Spotify from "../util/spotify";
 
 function App() {
   const [searchResults, setSearchResults] = useState<TrackType[]>([]);
@@ -43,17 +43,23 @@ function App() {
   }
 
   return (
-    <>
-      <h1>Jammming</h1>
-      <SearchBar onSearch={search} />
-      <SearchResults searchResults={searchResults} onAddTrack={addTrack} />
-      <Playlist
-        playlistTracks={playlistTracks}
-        onNameChange={updatePlaylistName}
-        onRemoveTrack={removeTrack}
-        onSave={savePlaylist}
-      />
-    </>
+    <div className="container max-w-xs md:max-w-md lg:max-w-lg">
+      <header className="py-8">
+        <h1 className="text-5xl font-black underline">
+          Ja<span className="text-purple-500">mmm</span>ing
+        </h1>
+      </header>
+      <main className="flex flex-col gap-8">
+        <SearchBar onSearch={search} />
+        <SearchResults searchResults={searchResults} onAddTrack={addTrack} />
+        <Playlist
+          playlistTracks={playlistTracks}
+          onNameChange={updatePlaylistName}
+          onRemoveTrack={removeTrack}
+          onSave={savePlaylist}
+        />
+      </main>
+    </div>
   );
 }
 
