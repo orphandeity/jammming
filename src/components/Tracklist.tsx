@@ -1,5 +1,4 @@
 import Track from "./Track";
-import { XCircle, PlusCircle } from "lucide-react";
 
 interface TracklistProps {
   tracks: TrackType[];
@@ -20,22 +19,11 @@ function Tracklist({
             key={track.id}
             className="flex items-center gap-4 rounded-md bg-white px-4 py-2 shadow-sm"
           >
-            {onAddTrack ? (
-              <button
-                onClick={() => onAddTrack(track)}
-                className="text-purple-500/75 transition-opacity hover:text-purple-500"
-              >
-                <PlusCircle />
-              </button>
-            ) : onRemoveTrack ? (
-              <button
-                onClick={() => onRemoveTrack(track.id)}
-                className="text-red-500/75 transition-opacity hover:text-red-500"
-              >
-                <XCircle />
-              </button>
-            ) : null}
-            <Track track={track} />
+            <Track
+              track={track}
+              onAddTrack={onAddTrack ? onAddTrack : undefined}
+              onRemoveTrack={onRemoveTrack ? onRemoveTrack : undefined}
+            />
           </li>
         ))}
       </ul>

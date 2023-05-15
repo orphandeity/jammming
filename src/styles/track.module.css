@@ -1,0 +1,12 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.datalist {
+  display: grid;
+  grid-template-columns: max-content auto;
+  align-items: center;
+  column-gap: 0.5rem;
+}

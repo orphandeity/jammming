@@ -48,6 +48,12 @@ const Spotify = {
           name: track.name,
           artist: track.artists[0].name,
           album: track.album.name,
+          image: {
+            // grab the smallest image available
+            url: track.album.images[track.album.images.length - 1].url,
+            height: track.album.images[track.album.images.length - 1].height,
+            width: track.album.images[track.album.images.length - 1].width,
+          },
           uri: track.uri,
         }));
       });

@@ -5,6 +5,7 @@ interface TrackType {
   name: string;
   artist: string;
   album: string;
+  image: Image;
   uri: string;
 }
 
@@ -13,7 +14,7 @@ interface TrackType {
 interface Image {
   url: string;
   height: number;
-  weight: number;
+  width: number;
 }
 
 interface TrackResponseObject {
